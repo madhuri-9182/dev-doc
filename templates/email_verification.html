@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Email Verification</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #cfcbdb;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .email-container {
+            background: #cfcbdb;
+            padding: 20px;
+            color: #281d6b;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            background: #281d6b;
+            padding: 10px;
+            text-align: left;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+
+        .email-content {
+            background: #fff;
+            padding: 0;
+            border-radius: 15px;
+            border: 1px solid #281d6b;
+        }
+
+        .email-content-content {
+            padding: 20px;
+        }
+
+        .email-content h5 {
+            color: #281d6b;
+            margin-bottom: 20px;
+        }
+
+        .email-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #281d6b;
+        }
+
+        .email-content a {
+            color: #281d6b;
+            text-decoration: none;
+        }
+
+        .verify-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #01a8fe 0%, #0176fe 100%);
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 20px 0;
+        }
+
+        .email-footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #281d6b;
+        }
+
+        .email-footer a {
+            margin: 0 2px;
+            color: #281d6b;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-content-content {
+                padding: 10px;
+            }
+
+            .logo-section {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #cfcbdb;">
+    <div class="email-container">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td>
+                    <div class="email-content">
+                        <div class="logo-section"
+                            style="padding: 15px 20px; margin: -1px -1px 0 -1px; border-radius: 15px 15px 0 0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="80" style="vertical-align: middle;">
+                                        <img src="https://hiringdog-assets.s3.ap-south-1.amazonaws.com/Hiringdog.png"
+                                            alt="HiringDog" style="height: 80px; display: block;" />
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: center;">
+                                        <span style="color: white; font-size: 24px; font-weight: bold;">Verify Your
+                                            Email</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="email-content-content">
+                            <p>Hi {{user_name}},</p>
+                            <p>Thank you for signing up with HiringDog! Please verify your email address to activate
+                                your account.</p>
+
+                            <p style="text-align: center;">
+                                <a href="https://{{site_domain}}{{verification_link}}" class="verify-button"
+                                    style="color: white; text-decoration: none;">✨Verify Email</a>
+                            </p>
+
+                            <p>If you didn’t create an account, you can safely ignore this email.</p>
+                            <p>For security reasons, this link will expire in 24 hours.</p>
+
+                            <p>
+                                Best Regards,<br>
+                                Team Hiring Dog<br>
+                                <a href="mailto:contact@hdiplatform.in">contact@hdiplatform.in</a>
+                            </p>
+                        </div>
+                    </div>
+                    <footer>
+                        <div class="email-footer">
+                            <p style="text-align: center;">
+                                <a><img alt="facebook_brand logo" height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/facebook.png"></a>
+                                <a href=""><img alt='linkedin brand logo' height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/linkedin.png"></a>
+                                <a href=""><img alt="twitter brand logo" height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/twitter.png"></a>
+                            </p>
+                            <p>
+                                Adhyapan Training & Development Center LLP
+                            </p>
+                        </div>
+                    </footer>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New Feedback Submitted</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #cfcbdb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            background: #cfcbdb;
+            padding: 50px 20px;
+            color: #281d6b;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            background: #281d6b;
+            padding: 10px;
+            text-align: left;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+
+        .email-content {
+            background: #fff;
+            padding: 0px 0px 20px 0px;
+            border-radius: 15px 15px 15px 15px;
+            border: 1px solid #281d6b;
+        }
+
+        .email-content-content {
+            padding: 20px 40px 0px 40px;
+        }
+
+        .email-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #281d6b;
+        }
+
+        .feedback-box {
+            background: #f8f9fa;
+            border: 1px solid #281d6b;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .priority-p0 {
+            border-left: 4px solid #dc3545;
+        }
+
+        .priority-p1 {
+            border-left: 4px solid #ffc107;
+        }
+
+        .priority-p2 {
+            border-left: 4px solid #28a745;
+        }
+
+        .email-footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #281d6b;
+        }
+    </style>
+</head>
+
+<body style="background-color: #cfcbdb;">
+    <div class="email-container">
+        <div style="max-width: 700px; margin: 0px auto; font-size: 14px;">
+            <div class="email-content">
+                <div class="logo-section"
+                    style="padding: 15px 20px; margin: -1px -1px 0 -1px; border-radius: 15px 15px 0 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td width="80" style="vertical-align: middle;">
+                                <img src="https://hiringdog-assets.s3.ap-south-1.amazonaws.com/Hiringdog.png"
+                                    alt="HiringDog" style="height: 80px; display: block;" />
+                            </td>
+                            <td style="vertical-align: middle; text-align: center;">
+                                <span style="color: white; font-size: 24px; font-weight: bold;">New Feedback
+                                    Submitted</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="email-content-content">
+                    <p>Hi Team,</p>
+                    <p>A new feedback has been submitted. Please review and assign.</p>
+
+                    <div class="feedback-box priority-{{priority|lower}}">
+                        <p><strong>Type:</strong> {{feedback_type}}</p>
+                        <p><strong>Priority:</strong> {{priority}}</p>
+                        <p><strong>User:</strong> {{user_name}} ({{user_email}})</p>
+                        <p><strong>Date:</strong> {{submission_date}}</p>
+
+                        <p><strong>Feedback:</strong></p>
+                        <p style="font-style: italic; background: #fff; padding: 10px; border-radius: 5px;">
+                            "{{feedback_content}}"
+                        </p>
+
+                        {% if has_screenshot %}
+                        <p><strong>Screenshot:</strong> ✅ Attached</p>
+                        {% endif %}
+                    </div>
+
+                    <p>Please take necessary action.</p>
+
+                    <p>
+                        Best Regards,<br>
+                        HiringDog System
+                    </p>
+                </div>
+            </div>
+            <footer>
+                <div class="email-footer">
+                    <p>
+                        Adhyapan Training & Development Center LLP
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

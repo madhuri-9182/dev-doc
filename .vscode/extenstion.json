@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+      "SonarSource.sonarlint-vscode",
+      "ms-python.black-formatter",
+      "esbenp.prettier-vscode",
+      "ms-python.python",
+      "alexcvzz.vscode-sqlite",
+      "ms-vscode.live-server"
+    ]
+  }
+  

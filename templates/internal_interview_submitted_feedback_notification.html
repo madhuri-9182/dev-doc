@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Internal Interview Submitted Feedback Notification</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #cfcbdb;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .email-container {
+            background: #cfcbdb;
+            padding: 20px;
+            color: #281d6b;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            background: #281d6b;
+            padding: 10px;
+            text-align: left;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+
+        .email-content {
+            background: #fff;
+            padding: 0;
+            border-radius: 15px;
+            border: 1px solid #281d6b;
+        }
+
+        .email-content-content {
+            padding: 20px;
+        }
+
+        .email-content h5 {
+            color: #281d6b;
+            margin-bottom: 20px;
+        }
+
+        .email-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #281d6b;
+        }
+
+        .email-content a {
+            color: #281d6b;
+            text-decoration: none;
+        }
+
+        .email-footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #281d6b;
+        }
+
+        .email-footer a {
+            margin: 0 2px;
+            color: #281d6b;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-content-content {
+                padding: 10px;
+            }
+
+            .logo-section {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #cfcbdb;">
+    <div class="email-container">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td>
+                    <div class="email-content">
+                        <div class="logo-section"
+                            style="padding: 15px 20px; margin: -1px -1px 0 -1px; border-radius: 15px 15px 0 0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="80" style="vertical-align: middle;">
+                                        <img src="https://hiringdog-assets.s3.ap-south-1.amazonaws.com/Hiringdog.png"
+                                            alt="HiringDog" style="height: 80px; display: block;" />
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: center;">
+                                        <span style="color: white; font-size: 24px; font-weight: bold;">Feedback
+                                            Reviewed</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="email-content-content">
+                            <table cellpadding="0" cellspacing="0" style="width: 100%; border: 0px;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>Dear {{internal_user_name}},</p>
+                                            <p>
+                                                The feedback for the interview conducted by
+                                                <strong>{{interviewer_name}}</strong> with candidate
+                                                <strong>{{candidate_name}}</strong> from
+                                                <strong>{{organization_name}}</strong> has been successfully reviewed.
+                                                Below are the details:
+                                            </p>
+
+                                            <div class="credentials-box"
+                                                style="background: #ffffff; padding: 25px; border-radius: 15px; margin: 20px 0; border: 1px solid #281d6b; border-top: 4px solid #01a8fe;">
+                                                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                    <tr>
+                                                        <td
+                                                            style="padding-bottom: 20px; border-bottom: 1px solid rgba(40, 29, 107, 0.1);">
+                                                            <span style="font-size: 20px;">📄</span>
+                                                            <span
+                                                                style="color: #281d6b; font-size: 18px; font-weight: bold; margin-left: 8px;">Feedback
+                                                                Details</span>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Candidate Name Row -->
+                                                    <tr>
+                                                        <td style="padding-top: 15px; padding-bottom: 15px;">
+                                                            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                <tr>
+                                                                    <td
+                                                                        style="padding: 8px 0; width: 100px; vertical-align: middle;">
+                                                                        <div style="white-space: nowrap;">
+                                                                            <span style="font-size: 18px;">👤</span>
+                                                                            <span
+                                                                                style="color: #281d6b; font-weight: bold; margin-left: 8px;">Candidate</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="padding-left: 15px;">
+                                                                        <div
+                                                                            style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; font-family: monospace; word-break: break-all;">
+                                                                            {{candidate_name}}
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Organization Name Row -->
+                                                    <tr>
+                                                        <td style="padding-bottom: 15px;">
+                                                            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                <tr>
+                                                                    <td
+                                                                        style="padding: 8px 0; width: 100px; vertical-align: middle;">
+                                                                        <div style="white-space: nowrap;">
+                                                                            <span style="font-size: 18px;">🏢</span>
+                                                                            <span
+                                                                                style="color: #281d6b; font-weight: bold; margin-left: 8px;">Organization</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="padding-left: 15px;">
+                                                                        <div
+                                                                            style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; font-family: monospace; word-break: break-all;">
+                                                                            {{organization_name}}
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Position Row -->
+                                                    <tr>
+                                                        <td style="padding-bottom: 15px;">
+                                                            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                <tr>
+                                                                    <td
+                                                                        style="padding: 8px 0; width: 100px; vertical-align: middle;">
+                                                                        <div style="white-space: nowrap;">
+                                                                            <span style="font-size: 18px;">💼</span>
+                                                                            <span
+                                                                                style="color: #281d6b; font-weight: bold; margin-left: 8px;">Position</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="padding-left: 15px;">
+                                                                        <div
+                                                                            style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; font-family: monospace; word-break: break-all;">
+                                                                            {{position}}
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Interviewer Name Row -->
+                                                    <tr>
+                                                        <td style="padding-bottom: 15px;">
+                                                            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                <tr>
+                                                                    <td
+                                                                        style="padding: 8px 0; width: 100px; vertical-align: middle;">
+                                                                        <div style="white-space: nowrap;">
+                                                                            <span style="font-size: 18px;">🗣️</span>
+                                                                            <span
+                                                                                style="color: #281d6b; font-weight: bold; margin-left: 8px;">Interviewer</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="padding-left: 15px;">
+                                                                        <div
+                                                                            style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; font-family: monospace; word-break: break-all;">
+                                                                            {{interviewer_name}}
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Interview Date Row -->
+                                                    <tr>
+                                                        <td style="padding-bottom: 15px;">
+                                                            <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                                <tr>
+                                                                    <td
+                                                                        style="padding: 8px 0; width: 100px; vertical-align: middle;">
+                                                                        <div style="white-space: nowrap;">
+                                                                            <span style="font-size: 18px;">📅</span>
+                                                                            <span
+                                                                                style="color: #281d6b; font-weight: bold; margin-left: 8px;">Interview
+                                                                                Date</span>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="padding-left: 15px;">
+                                                                        <div
+                                                                            style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; font-family: monospace;">
+                                                                            {{interview_date}}
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
+                                            <br>
+                                            <p>
+                                                Best Regards,<br>
+                                                Team Hiring Dog<br>
+                                                For any support, reach out to us at
+                                                <a href="mailto:contact@hdiplatform.in"
+                                                    style="color: #281d6b; text-decoration: none;">contact@hdiplatform.in</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <footer>
+                        <div class="email-footer">
+                            <p style="text-align: center;">
+                                <a><img alt="facebook_brand logo" height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/facebook.png"></a>
+                                <a href=""><img alt='linkedin brand logo' height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/linkedin.png"></a>
+                                <a href=""><img alt="twitter brand logo" height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/twitter.png"></a>
+                            </p>
+                            <p>
+                                Adhyapan Training & Development Center LLP
+                            </p>
+                        </div>
+                    </footer>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

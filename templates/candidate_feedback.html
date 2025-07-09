@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Interview Feedback Request</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #cfcbdb;
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .email-container {
+            background: #cfcbdb;
+            padding: 20px;
+            color: #281d6b;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            background: #281d6b;
+            padding: 10px;
+            text-align: left;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+
+        .email-content {
+            background: #fff;
+            padding: 0;
+            border-radius: 15px;
+            border: 1px solid #281d6b;
+        }
+
+        .email-content-content {
+            padding: 20px;
+        }
+
+        .email-content h5 {
+            color: #281d6b;
+            margin-bottom: 20px;
+        }
+
+        .email-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #281d6b;
+        }
+
+        .email-content a {
+            color: #281d6b;
+            text-decoration: none;
+        }
+
+        .feedback-box {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid #281d6b;
+            border-top: 4px solid #4CAF50;
+        }
+
+        .email-footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #281d6b;
+        }
+
+        .email-footer a {
+            margin: 0 2px;
+            color: #281d6b;
+        }
+
+        /* Rating button styles */
+        .rating-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        .rating-cell {
+            text-align: center;
+            vertical-align: top;
+            width: 20%;
+        }
+
+        .rating-link {
+            display: block;
+            padding: 15px 5px;
+            text-decoration: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .extremely-satisfied {
+            background-color: #4CAF50 !important;
+        }
+
+        .satisfied {
+            background-color: #8BC34A !important;
+        }
+
+        .neutral {
+            background-color: #FFC107 !important;
+            color: #333 !important;
+        }
+
+        .dissatisfied {
+            background-color: #FF9800 !important;
+        }
+
+        .extremely-dissatisfied {
+            background-color: #F44336 !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-content-content {
+                padding: 10px;
+            }
+
+            .logo-section {
+                text-align: center;
+            }
+
+            .rating-table {
+                border-spacing: 5px;
+            }
+
+            .rating-link {
+                padding: 12px 3px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #cfcbdb;">
+    <div class="email-container">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td>
+                    <div class="email-content">
+                        <div class="logo-section"
+                            style="padding: 15px 20px; margin: -1px -1px 0 -1px; border-radius: 15px 15px 0 0;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="80" style="vertical-align: middle;">
+                                        <img src="https://hiringdog-assets.s3.ap-south-1.amazonaws.com/Hiringdog.png"
+                                            alt="HiringDog" style="height: 80px; display: block;" />
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: center;">
+                                        <span style="color: white; font-size: 24px; font-weight: bold;">Share Your
+                                            Interview Experience</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="email-content-content">
+                            <table cellpadding="0" cellspacing="0" style="width: 100%; border: 0px;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p>Dear {{candidate_name}},</p>
+                                            <p>
+                                                Thank you for participating in the interview process with us on
+                                                <strong>{{interview_date}}</strong> at
+                                                <strong>{{interview_time}}</strong>.
+                                            </p>
+
+                                            <div class="feedback-box">
+                                                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                    <tr>
+                                                        <td
+                                                            style="padding-bottom: 20px; border-bottom: 1px solid rgba(40, 29, 107, 0.1);">
+                                                            <span style="font-size: 20px;">💬</span>
+                                                            <span
+                                                                style="color: #281d6b; font-size: 18px; font-weight: bold; margin-left: 8px;">How
+                                                                was your interview experience?</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding-top: 20px;">
+                                                            <!-- Rating buttons using table for better email compatibility -->
+                                                            <table class="rating-table" cellpadding="0" cellspacing="0"
+                                                                border="0">
+                                                                <tr>
+                                                                    <td class="rating-cell">
+                                                                        <a href="https://{{site_domain}}/candidate-feedback/{{feedback_uid}}/extremely-satisfied"
+                                                                            class="rating-link extremely-satisfied"
+                                                                            style="background-color: #4CAF50; color: white; display: block; padding: 15px 5px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 11px; line-height: 1.2; text-align: center;">
+                                                                            <div
+                                                                                style="font-size: 24px; margin-bottom: 5px;">
+                                                                                😍</div>
+                                                                            <div>EXTREMELY<br>SATISFIED</div>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="rating-cell">
+                                                                        <a href="https://{{site_domain}}/candidate-feedback/{{feedback_uid}}/satisfied"
+                                                                            class="rating-link satisfied"
+                                                                            style="background-color: #8BC34A; color: white; display: block; padding: 15px 5px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 11px; line-height: 1.2; text-align: center;">
+                                                                            <div
+                                                                                style="font-size: 24px; margin-bottom: 5px;">
+                                                                                😊</div>
+                                                                            <div>SATISFIED</div>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="rating-cell">
+                                                                        <a href="https://{{site_domain}}/candidate-feedback/{{feedback_uid}}/neutral"
+                                                                            class="rating-link neutral"
+                                                                            style="background-color: #FFC107; color: #333; display: block; padding: 15px 5px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 11px; line-height: 1.2; text-align: center;">
+                                                                            <div
+                                                                                style="font-size: 24px; margin-bottom: 5px;">
+                                                                                😐</div>
+                                                                            <div>NEUTRAL</div>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="rating-cell">
+                                                                        <a href="https://{{site_domain}}/candidate-feedback/{{feedback_uid}}/dissatisfied"
+                                                                            class="rating-link dissatisfied"
+                                                                            style="background-color: #FF9800; color: white; display: block; padding: 15px 5px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 11px; line-height: 1.2; text-align: center;">
+                                                                            <div
+                                                                                style="font-size: 24px; margin-bottom: 5px;">
+                                                                                😕</div>
+                                                                            <div>DISSATISFIED</div>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="rating-cell">
+                                                                        <a href="https://{{site_domain}}/candidate-feedback/{{feedback_uid}}/extremely-dissatisfied"
+                                                                            class="rating-link extremely-dissatisfied"
+                                                                            style="background-color: #F44336; color: white; display: block; padding: 15px 5px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 11px; line-height: 1.2; text-align: center;">
+                                                                            <div
+                                                                                style="font-size: 24px; margin-bottom: 5px;">
+                                                                                😡</div>
+                                                                            <div>EXTREMELY<br>DISSATISFIED</div>
+                                                                        </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
+                                            <p>
+                                                Your feedback is valuable to us and helps improve our interview process.
+                                                Simply click on any of the buttons above to share your experience.
+                                            </p>
+                                            <p>
+                                                We appreciate the time you invested in the process and will be in touch
+                                                regarding next steps.
+                                            </p>
+                                            <p>
+                                                Best Regards,<br>
+                                                Team Hiring Dog<br>
+                                                For any support, reach out to us at
+                                                <a href="mailto:contact@hdiplatform.in">contact@hdiplatform.in</a>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <footer>
+                        <div class="email-footer">
+                            <p style="text-align: center;">
+                                <a><img alt="facebook_brand logo" height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/facebook.png"></a>
+                                <a href=""><img alt='linkedin brand logo' height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/linkedin.png"></a>
+                                <a href=""><img alt="twitter brand logo" height="30px" width="30px"
+                                        src="https://enablefin.s3.ap-south-1.amazonaws.com/images/twitter.png"></a>
+                            </p>
+                            <p>
+                                Adhyapan Training & Development Center LLP
+                            </p>
+                        </div>
+                    </footer>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

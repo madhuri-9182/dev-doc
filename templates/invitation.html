@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>User Invitation</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Same styles as above */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #cfcbdb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .email-container {
+            background: #cfcbdb;
+            padding: 50px 20px;
+            color: #281d6b;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .logo-section {
+            background: #281d6b;
+            padding: 10px;
+            text-align: left;
+            border-radius: 15px;
+            border: 1px solid black;
+        }
+
+        .email-content {
+            background: #fff;
+            padding: 0px 0px 20px 0px;
+            border-radius: 15px 15px 15px 15px;
+            border: 1px solid #281d6b;
+        }
+
+        .email-content-content {
+            padding: 20px 40px 0px 40px;
+        }
+
+        .email-content h5 {
+            color: #281d6b;
+            margin-bottom: 20px;
+        }
+
+        .email-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #281d6b;
+        }
+
+        .email-content a {
+            color: #281d6b;
+            text-decoration: none;
+        }
+
+        .credentials-box {
+            background: linear-gradient(to right bottom, #ffffff, #f8f9fa);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid #281d6b;
+            box-shadow: 0 4px 15px rgba(40, 29, 107, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .credentials-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #01a8fe, #0176fe);
+        }
+
+        .credentials-title {
+            color: #281d6b;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(40, 29, 107, 0.1);
+        }
+
+        .credential-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .credential-row:hover {
+            background: rgba(40, 29, 107, 0.05);
+        }
+
+        .credential-label {
+            font-weight: 600;
+            color: #281d6b;
+            min-width: 120px;
+            margin-right: 15px;
+        }
+
+        .credential-value {
+            color: #281d6b;
+            flex: 1;
+            padding: 8px 12px;
+            background: rgba(40, 29, 107, 0.03);
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 35px;
+            margin: 20px 12px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(135deg, #01a8fe 0%, #0176fe 100%);
+            border: 1px solid #0176fe;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #281d6b 0%, #453884 100%);
+            border: none;
+        }
+
+        .email-footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #281d6b;
+        }
+
+        .email-footer a {
+            margin: 0 2px;
+            color: #281d6b;
+        }
+    </style>
+</head>
+
+<body style="background-color: #cfcbdb;">
+    <div class="email-container">
+        <div style="max-width: 700px; margin: 0px auto; font-size: 14px;">
+            <div class="email-content">
+                <div class="logo-section"
+                    style="padding: 15px 20px; margin: -1px -1px 0 -1px; border-radius: 15px 15px 0 0;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td width="80" style="vertical-align: middle;">
+                                <img src="https://hiringdog-assets.s3.ap-south-1.amazonaws.com/Hiringdog.png"
+                                    alt="HiringDog" style="height: 80px; display: block;" />
+                            </td>
+                            <td style="vertical-align: middle; text-align: center;">
+                                <span style="color: white; font-size: 24px; font-weight: bold;">Welcome to
+                                    HiringDog!</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="email-content-content">
+                    <table cellpadding="0" cellspacing="0" style="width: 100%; border: 0px;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>Dear {{invited_name}},</p>
+                                    <p>
+                                        You've been invited by {{user_name}} to join <strong>{{org_name}}</strong> on
+                                        Hiring Dog. We're excited to have you on board! Below are your account details
+                                        and next steps.
+                                    </p>
+
+                                    <div class="credentials-box"
+                                        style="background: #ffffff; padding: 25px; border-radius: 15px; margin: 20px 0; border: 1px solid #281d6b; border-top: 4px solid #01a8fe;">
+                                        <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                            <tr>
+                                                <td
+                                                    style="padding-bottom: 20px; border-bottom: 1px solid rgba(40, 29, 107, 0.1);">
+                                                    <span style="font-size: 20px;">🔐</span>
+                                                    <span
+                                                        style="color: #281d6b; font-size: 18px; font-weight: bold; margin-left: 8px;">Account
+                                                        Credentials</span>
+                                                </td>
+                                            </tr>
+                                            <!-- Email Row -->
+                                            <tr>
+                                                <td style="padding-top: 15px; padding-bottom: 15px;">
+                                                    <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                        <tr>
+                                                            <td
+                                                                style="padding: 8px 0; width: 100px; vertical-align: middle;">
+                                                                <div style="white-space: nowrap;">
+                                                                    <span style="font-size: 18px;">📧</span>
+                                                                    <span
+                                                                        style="color: #281d6b; font-weight: bold; margin-left: 8px;">Email</span>
+                                                                </div>
+                                                            </td>
+                                                            <td style="padding-left: 15px;">
+                                                                <div
+                                                                    style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; font-family: monospace; word-break: break-all;">
+                                                                    {{email}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Password Row -->
+                                            <tr>
+                                                <td style="padding-bottom: 15px;">
+                                                    <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                                        <tr>
+                                                            <td
+                                                                style="padding: 8px 0; width: 100px; vertical-align: middle;">
+                                                                <div style="white-space: nowrap;">
+                                                                    <span style="font-size: 18px;">🔑</span>
+                                                                    <span
+                                                                        style="color: #281d6b; font-weight: bold; margin-left: 8px;">Password</span>
+                                                                </div>
+                                                            </td>
+                                                            <td style="padding-left: 15px;">
+                                                                <div
+                                                                    style="background: #f8f9fa; padding: 8px 12px; border-radius: 6px; font-family: monospace; word-break: break-all;">
+                                                                    {{password}}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <p style="color: #666; font-size: 13px; text-align: center; margin: 15px 0;">
+                                        Note: This invitation will expire in 2 days. Please activate your account before
+                                        then.
+                                    </p>
+
+                                    <div style="text-align: center; margin: 30px 0;">
+                                        <a class="btn" target="_blank" style="
+                                            display: inline-flex;
+                                            align-items: center;
+                                            padding: 12px 30px;
+                                            gap: 8px;
+                                            background: linear-gradient(135deg, #01a8fe 0%, #0176fe 100%);
+                                            border: 1px solid #0176fe;
+                                        " href="https://{{site_domain}}{{activation_url}}">
+                                            <span style="margin-right: 8px;">✨</span> Activate Your Account
+                                        </a>
+                                    </div>
+
+                                    <div style="text-align: center; margin: 25px 0;">
+                                        <p style="margin-bottom: 15px;">Already activated? Sign in to your account:</p>
+                                        <a class="btn" href="{{login_url}}" style="
+                                            background: linear-gradient(135deg, #281d6b 0%, #453884 100%);
+                                            border: none;
+                                            display: inline-flex;
+                                            align-items: center;
+                                            padding: 12px 30px;
+                                            gap: 8px;
+                                        ">
+                                            <span style="margin-right: 8px;">🚀</span> Login to Dashboard
+                                        </a>
+                                    </div>
+
+                                    <p>
+                                        For security purposes, we recommend changing your password after your first
+                                        login.
+                                        You can easily update your credentials through your profile settings.
+                                    </p>
+
+                                    <p>
+                                        If you have any questions, please reach out to {{user_email}}.
+                                    </p>
+
+                                    <br>
+                                    <p>
+                                        Best Regards,<br>
+                                        Team Hiring Dog<br>
+                                        For any support, reach out to us at
+                                        <a href="mailto:contact@hdiplatform.in">contact@hdiplatform.in</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer>
+                <div class="email-footer">
+                    <p style="text-align: center;">
+                        <a><img alt="facebook_brand logo" height="30px" width="30px"
+                                src="https://enablefin.s3.ap-south-1.amazonaws.com/images/facebook.png"></a>
+                        <a href=""><img alt='linkedin brand logo' height="30px" width="30px"
+                                src="https://enablefin.s3.ap-south-1.amazonaws.com/images/linkedin.png"></a>
+                        <a href=""><img alt="twitter brand logo" height="30px" width="30px"
+                                src="https://enablefin.s3.ap-south-1.amazonaws.com/images/twitter.png"></a>
+                    </p>
+                    <p>
+                        Adhyapan Training & Development Center LLP
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
