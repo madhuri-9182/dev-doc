@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-RUN mkdir -p /app/logs
+RUN mkdir -p /var/log/hiringdog
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -22,7 +22,6 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 # Copy Django project
 COPY . .
-#COPY .env .env
 
 # Copy entrypoint script
 COPY docker/entrypoint.sh /entrypoint.sh

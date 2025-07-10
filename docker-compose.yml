@@ -27,11 +27,11 @@ services:
       dockerfile: Dockerfile
     command: gunicorn hiringdogbackend.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - ./git-source:/app/git-source
+      - ./:/app/
       - ./docker/entrypoint.sh:/entrypoint.sh
-      - ./git-source/requirements.txt:/app/requirements.txt
+      - ./requirements.txt:/app/requirements.txt
     env_file:
-      - ./git-source/.env
+      - ./.env
     depends_on:
       - db
       - redis
@@ -45,11 +45,11 @@ services:
       dockerfile: Dockerfile
     command: celery -A hiringdogbackend worker --loglevel=info
     volumes:
-      - ./git-source:/app/git-source
+      - ./:/app/
       - ./docker/entrypoint.sh:/entrypoint.sh
-      - ./git-source/requirements.txt:/app/requirements.txt
+      - ./requirements.txt:/app/requirements.txt
     env_file:
-      - ./git-source/.env
+      - ./.env
     depends_on:
       - db
       - redis
@@ -61,11 +61,11 @@ services:
       dockerfile: Dockerfile
     command: celery -A hiringdogbackend beat --loglevel=info
     volumes:
-      - ./git-source:/app/git-source
+      - .:/app/
       - ./docker/entrypoint.sh:/entrypoint.sh
-      - ./git-source/requirements.txt:/app/requirements.txt
+      - ./requirements.txt:/app/requirements.txt
     env_file:
-      - ./git-source/.env
+      - ./.env
     depends_on:
       - db
       - redis
